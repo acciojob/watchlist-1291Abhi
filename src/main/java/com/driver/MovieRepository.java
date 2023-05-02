@@ -44,11 +44,11 @@ public class MovieRepository {
     }
 
     public List<String> getAllMovieByDirector(String director) {
-        return directorMovieMap.get(director);
+        return new ArrayList(directorMovieMap.get(director));
     }
 
     public List<String> getAllMovie() {
-        return movieMap.keySet().stream().toList();
+        return new ArrayList(movieMap.keySet());
     }
 
     public void removeDirector(String directorName) {
@@ -61,6 +61,6 @@ public class MovieRepository {
     }
 
     public List<String> getAllDirector() {
-        return directorMap.keySet().stream().toList();
+        return new ArrayList(directorMap.keySet());
     }
 }
