@@ -44,11 +44,17 @@ public class MovieRepository {
     }
 
     public List<String> getAllMovieByDirector(String director) {
-        return new ArrayList(directorMovieMap.get(director));
+        List<String> movie=new ArrayList<>();
+        if(directorMovieMap.containsKey(director))
+            movie=directorMovieMap.get(director);
+        return movie;
     }
 
     public List<String> getAllMovie() {
-        return new ArrayList(movieMap.keySet());
+        List<String> movie=new ArrayList<>();
+        for(String k:movieMap.keySet())
+            movie.add(k);
+        return movie;
     }
 
     public void removeDirector(String directorName) {
@@ -61,6 +67,9 @@ public class MovieRepository {
     }
 
     public List<String> getAllDirector() {
-        return new ArrayList(directorMap.keySet());
+        List<String> movie=new ArrayList<>();
+        for(String director:directorMap.keySet())
+            movie.add(director);
+        return movie;
     }
 }
